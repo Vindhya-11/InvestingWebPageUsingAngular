@@ -1,0 +1,42 @@
+<p>demo works!</p>
+
+<h2>Product List</h2>
+<input type="button" (click)="addProAll()" value="Display Data">
+<table class="table table-dark table-stripped ">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let x of productArray">
+    <td>{{x.name}}</td>
+    <td>{{x.description}}</td>
+    <td>{{x.price}}</td>
+    <td><input type="button" class="bi bi-cart"  (click)="addToCart(x)" value="Add to Cart"></td>
+  </tr>
+</table>
+
+
+<h2>Cart List</h2>
+<table class="table table-dark table-stripped ">
+  <tr>
+    <th>Name</th>
+    <th>Qty</th>
+    <th>Price</th>
+    <th>Total</th>
+  </tr>
+  <tr *ngFor="let x of cartArray1">
+    <td>{{x.name}}</td>
+    <td><select name="quantity" id="quantity">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+     </select></td>
+    <td>{{x.price}} </td>
+    <td>{{x.total}}</td>
+    <td><input type="button" (click)="delete(x.name,x.price)" value="Remove from Cart"></td>
+  </tr>
+  <tr>
+    <p>The Total Amount is {{Grant_total}}</p>
+  </tr>
+</table>

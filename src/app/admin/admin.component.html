@@ -1,0 +1,40 @@
+<div class = "container">
+  <h1>Welcome To Admin Page  </h1>
+  <div>
+    <h3>Manage Mutual</h3>
+    <table class="table table-stripped">
+      <tr>
+        <th>Name</th>
+        <th>Value</th>
+        <th>Return</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><input type="text" [(ngModel)]="mutualArray.name" /></td>
+        <td><input type="text" [(ngModel)]="mutualArray.value" /></td>
+        <td><input type="text" [(ngModel)]="mutualArray.returns" /></td>
+        <td><input type="text" [(ngModel)]="mutualArray.description" /></td>
+        <td><input type="button" (click)="addMutualToHome()" value="Add" /></td>
+        <td><input type="button" (click)="deleteMutualToHome()" value="Delete" /></td>
+    </table>
+  </div>
+  <div>
+    <h3>Manage Stock</h3>
+    <table class="table table-stripped">
+      <tr>
+        <th>Name</th>
+        <th>Value</th>
+        <th>category</th>
+        <th>capital</th>
+      </tr>
+      <tr>
+        <td><input type="text" [(ngModel)]="stockArray.name" /></td>
+        <td><input type="text" [(ngModel)]="stockArray.value" /></td>
+        <td><input type="text" [(ngModel)]="stockArray.category" /></td>
+        <td><input type="text" [(ngModel)]="stockArray.capital" /></td>
+        <td><input type="button" (click)="addStockToHome()" value="Add" /></td>
+        <td><input type="button" (click)="deleteStockToHome()" value="Delete" /></td>
+    </table>
+  </div>
+  
+</div>

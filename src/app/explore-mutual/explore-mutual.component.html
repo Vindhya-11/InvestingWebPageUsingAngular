@@ -1,0 +1,35 @@
+
+<div class="container">
+    <h2>More Details about {{objMutual.name}}</h2>
+    <div class="card">
+      <div class="card-header mfh239SchemeName fw400 fs24" >{{objMutual.name}}
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover">
+          <tr>
+            <th>Description</th>
+            <th>Return</th>
+            <th>Net Asset Value</th>
+            <th>One-Time Investment Amount</th>
+          </tr>
+          <tr>
+            <td>{{ objMutual.description }}</td>
+            <td>{{ objMutual.returns / 100.0 | percent: "2.2-3" }}</td>
+            <td>{{ objMutual.value | currency: "INR" }}</td>
+            <td><input type="text" [(ngModel)]="objMutual.sip" /></td>
+            <td>
+              <input
+                type="button"
+                class="btn btn-primary"
+                (click)="addMutual(objMutual)"
+                value="Add to cart"
+              />
+            </td>
+          </tr>
+        </table>
+      </div> 
+    </div>
+</div>
