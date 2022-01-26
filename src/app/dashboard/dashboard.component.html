@@ -23,6 +23,7 @@
           <td>{{ x.description }}</td>
           <td>{{ x.value | currency: "INR" }}</td>
           <td>{{ x.sip | currency: "INR" }}</td>
+          <td><input type="button" (click)="deleteMutual(x.name,x)" value="Remove from Cart"></td>
         </tr>
         <tr>
           <td>Total Amount : {{ total_mutual_value | currency: "INR" }}</td>
@@ -51,6 +52,7 @@
           <td>{{ x.value | currency: "INR" }}</td>
           <td>{{ x.qty }}</td>
           <td>{{ x.totalAmount | currency: "INR" }}</td>
+          <td><input type="button" (click)="deleteStock(x.name,x)" value="Remove from Cart"></td>
         </tr>
         <tr>
           <td>Total Amount : {{ total_stock_value | currency: "INR" }}</td>

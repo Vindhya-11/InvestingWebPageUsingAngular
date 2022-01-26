@@ -21,9 +21,14 @@ export class RegistrationserviceService {
   totalMutualValue = 0;
   totaStockValue = 0;
   Valid = false;
+  boolMutual=false;
+  boolStock = false;
+  boolRegister = false;
+  cummulative=0;
   constructor() {}
   setData(x: Register) {
     this.registrationDetails.push(x);
+    this.boolRegister=true;
     console.log(this.registrationDetails);
   }
 
@@ -80,10 +85,12 @@ export class RegistrationserviceService {
   setMutualToHome(x: Mutual) {
     this.objMutualToHome = x;
     this.myMutualArrayToHome.push(x);
+    this.boolMutual=true;
   }
   setStockToHome(x: Stock) {
     this.objStockToHome = x;
     this.myStockArrayToHome.push(x);
+    this.boolStock=true;
   }
   getStockToHome() {
     return this.objStockToHome;
@@ -91,15 +98,19 @@ export class RegistrationserviceService {
   getMutualToHome() {
     return this.objMutualToHome;
   }
-  deleteMutualFromHome(x: string) {
-    this.myMutualArrayToHome.forEach((value, index) => {
-      if (value.name == x) this.myMutualArrayToHome.splice(index, 1);
-      
-    });
-  }
-  displayMutualToHome()
+  subMutual(x:Mutual)
   {
-    return this.myMutualArrayToHome;
+    this.cummulative -= Number(x.sip);
+    return this.totalMutualValue -= Number(x.sip);
   }
-  deleteStockFromHome(x: Stock) {}
+  subStock(x:Stock)
+  {
+    this.cummulative -= x.qty * x.value
+    return this.totaStockValue -= x.qty * x.value;
+  }
+  getCummulative()
+  {
+    this.cummulative = this.totalMutualValue + this.totaStockValue;
+    return this.cummulative
+  }
 }

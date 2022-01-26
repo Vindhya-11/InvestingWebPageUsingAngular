@@ -24,8 +24,24 @@ export class DashboardComponent implements OnInit {
       this.stockArray = this.dashServ.getStock();
       this.total_mutual_value = this.dashServ.getTotal();
       this.total_stock_value = this.dashServ.getTotalStock();
-      this.cummulativeValue= this.total_mutual_value + this.total_stock_value;
+      this.cummulativeValue= this.dashServ.getCummulative();
       console.log(JSON.stringify(this.mutualArray));
+  }
+  deleteMutual(x:string,y:Mutual)
+  {
+    this.mutualArray.forEach((value,index)=>{
+      if(value.name==x) this.mutualArray.splice(index,1);
+    });
+    this.total_mutual_value = this.dashServ.subMutual(y);
+    this.cummulativeValue = this.dashServ.cummulative;
+  }
+  deleteStock(x:string,y:Stock)
+  {
+    this.stockArray.forEach((value,index)=>{
+      if(value.name==x) this.stockArray.splice(index,1);
+    });
+    this.total_stock_value = this.dashServ.subStock(y);
+    this.cummulativeValue = this.dashServ.cummulative;
   }
   
 

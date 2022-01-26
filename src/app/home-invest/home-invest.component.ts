@@ -16,6 +16,14 @@ export class HomeInvestComponent implements OnInit {
 
   ngOnInit(): void {
    //this.getMutual()
+   if(this.boolMutual)
+   {
+     this.getMutual();
+   }
+   if(this.boolStock)
+   {
+     this.getStock();
+   }
   
   }
   
@@ -40,6 +48,8 @@ export class HomeInvestComponent implements OnInit {
   stock6:Stock = {name:"Bharat Airtel", category:"Telecom Service",qty:1,totalAmount:0, value:710.27, capital:45564534.0};
   stock7:Stock = {name:"Wipro", category:"IT Service",qty:1,totalAmount:0, value:615.98, capital:39964934.0};
   stockArray:Stock[]=[this.stock1,this.stock2,this.stock3,this.stock4,this.stock5,this.stock6];
+  boolMutual= this.homeSer.boolMutual;
+  boolStock= this.homeSer.boolStock;
   addMutual(x:Mutual)
   {
     this.homeSer.setMutual(x);
@@ -68,11 +78,6 @@ export class HomeInvestComponent implements OnInit {
   getStock()
   {
     this.stockArray.push(this.homeSer.getStockToHome());
-    
+
   }
-  deleteMutual()
-  {
-    this.mutualArray = this.homeSer.displayMutualToHome();
-  }
-  
 }

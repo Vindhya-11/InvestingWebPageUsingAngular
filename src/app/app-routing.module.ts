@@ -22,9 +22,9 @@ const routes: Routes = [
   {path:'Acomp' , component:AcompComponent},
   {path:'Bcomp' , component:BcompComponent},
   {path:'register' , component:RegisterComponent},
-  {path:'homeinvest' , component:HomeInvestComponent},
-  //{path:'dashboard' , component:DashboardComponent , canActivate: [AuthService]},
-  {path:'dashboard' , component:DashboardComponent },
+  {path:'homeinvest' , component:HomeInvestComponent , canActivate: [AuthService]},
+  {path:'dashboard' , component:DashboardComponent , canActivate: [AuthService]},
+  //{path:'dashboard' , component:DashboardComponent },
   {path:'exploreMutual' , component:ExploreMutualComponent},
   {path:'exploreStock' , component:ExploreStockComponent},
   {path:'admin' , component:AdminComponent}

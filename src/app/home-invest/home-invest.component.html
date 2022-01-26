@@ -1,16 +1,12 @@
-<div class="container-fluid" style="background-color: #5CDB95;">
+<div *ngIf="boolMutual" class="alert alert-success">
+  <h4>New Mutual Successfully Added.</h4>
+</div>
+<div *ngIf="boolStock" class="alert alert-success">
+  <h4>New Stock Successfully Added.</h4>
+</div>
+<div class="container-fluid" style="background-color: #5cdb95">
   <div style="--bs-bg-opacity: 0.5">
-    <h1>
-      Welcome!
-      <input
-        type="button"
-        class="btn btn-primary btn-sm"
-        (click)="getMutual()"
-        (click)="getStock()"
-        (click)="deleteMutual()"
-        value="Refresh"
-      />
-    </h1>
+    <h1>Welcome!</h1>
 
     <h1 class="lead">
       <b>Trusted by Millions of Indians. Start Investing Today.</b>

@@ -10,12 +10,11 @@
         <th>Description</th>
       </tr>
       <tr>
-        <td><input type="text" [(ngModel)]="mutualArray.name" /></td>
-        <td><input type="text" [(ngModel)]="mutualArray.value" /></td>
-        <td><input type="text" [(ngModel)]="mutualArray.returns" /></td>
-        <td><input type="text" [(ngModel)]="mutualArray.description" /></td>
-        <td><input type="button" (click)="addMutualToHome()" value="Add" /></td>
-        <td><input type="button" (click)="deleteMutualToHome()" value="Delete" /></td>
+        <td><input type="text" [(ngModel)]="mutualArray.name"  required/></td>
+        <td><input type="text" [(ngModel)]="mutualArray.value" required/></td>
+        <td><input type="text" [(ngModel)]="mutualArray.returns" required/></td>
+        <td><input type="text" [(ngModel)]="mutualArray.description" required/></td>
+        <td><input type="button" (click)="addMutualToHome()" value="Add" required/></td>
     </table>
   </div>
   <div>
@@ -28,12 +27,11 @@
         <th>capital</th>
       </tr>
       <tr>
-        <td><input type="text" [(ngModel)]="stockArray.name" /></td>
-        <td><input type="text" [(ngModel)]="stockArray.value" /></td>
-        <td><input type="text" [(ngModel)]="stockArray.category" /></td>
-        <td><input type="text" [(ngModel)]="stockArray.capital" /></td>
-        <td><input type="button" (click)="addStockToHome()" value="Add" /></td>
-        <td><input type="button" (click)="deleteStockToHome()" value="Delete" /></td>
+        <td><input type="text" [(ngModel)]="stockArray.name" required/></td>
+        <td><input type="text" [(ngModel)]="stockArray.value" required/></td>
+        <td><input type="text" [(ngModel)]="stockArray.category" required/></td>
+        <td><input type="text" [(ngModel)]="stockArray.capital" required/></td>
+        <td><input type="button" (click)="addStockToHome()" value="Add" required/></td>
     </table>
   </div>
   
